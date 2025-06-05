@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  width: 80vw;
+  height: 80vh;
+  max-width: 450px;
+  background: rgb(26, 31, 36);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.hand {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 80px;
+  color: white;
+}
+
+.choices {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.choice {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8),
+              -2px -2px 10px rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  color: white;
+}
+
+.choice:hover {
+  box-shadow: 2px 2px 10px rgba(59, 135, 197, 0.8),
+              -2px -2px 10px rgba(187, 71, 205, 0.8);
+}
+
+.result {
+  width: 70%;
+  height: 10%;
+  background-color: transparent;
+  margin-top: 25px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.labels {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.label-btn {
+  padding: 10px 20px;
+  border: none;
+  background: linear-gradient(to right, #c220a9c0, #888);
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: default;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+
+.label-btn:hover {
+  background: linear-gradient(to right, #666, #aaa);
+}
+
+@keyframes punch {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(-15deg); }
+  50% { transform: scale(0.9) rotate(15deg); }
+  75% { transform: scale(1.1) rotate(-10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.animate-punch {
+  animation: punch 0.4s ease;
+}
+
+
+.vs-text {
+ font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff0057, #ff8a00, #ffdd00, #00ff6a, #00d2ff, #7a00ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s ease infinite;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* Optional smooth fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+/* Animate the gradient colors */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
